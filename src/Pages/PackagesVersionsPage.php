@@ -81,7 +81,7 @@ class PackagesVersionsPage extends FwPage
         $this->json([
             'version_id' => $version->getId(),
             'name'       => $version->getData('name'),
-            'package_id' => $version->getData('version_id'),
+            'package_id' => $version->getData('package_id'),
         ], 201);
     }
 
@@ -90,7 +90,7 @@ class PackagesVersionsPage extends FwPage
         $this->json([
             'version_id' => $version->getId(),
             'name'       => $version->getData('name'),
-            'package_id' => $version->getData('version_id'),
+            'package_id' => $version->getData('package_id'),
         ]);
     }
 
