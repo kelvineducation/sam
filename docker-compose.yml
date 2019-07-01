@@ -1,0 +1,45 @@
+version: '3.7'
+services:
+  nginx:
+    image: nginx:1.17-alpine
+    restart: unless-stopped
+    volumes:
+      - ./public:/app/public
+      - ./docker/nginx/app.conf:/etc/nginx/conf.d/app.conf
+    networks:
+      default:
+      frontend:
+        aliases:
+          - deliverer
+
+  php:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    restart: unless-stopped
+    volumes:
+      - .:/app
+      - ~/.composer:/root/.composer
+    environment:
+      - APP_ENV
+      - HONEYBADGER_API_KEY
+      - DATABASE_URL
+
+  postgres:
+    image: postgres:11-alpine
+    restart: on-failure
+    ports:
+      - 5432
+    environment:
+      - PGDATA=/var/lib/postgresql/data
+      - POSTGRES_PASSWORD=
+      - POSTGRES_DB=deliverer
+      - PSQL_HISTORY=/var/lib/postgresql/data/psql_history
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+      - ./data/backup:/backup
+
+networks:
+  frontend:
+    external:
+      name: ${FRONTEND_NETWORK}
