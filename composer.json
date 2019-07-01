@@ -1,0 +1,29 @@
+{
+    "name": "kelvineducation/deliverer",
+    "description": "Manage and serve versioned static assets",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Matt Light",
+            "email": "matt@kelvin.education"
+        }
+    ],
+    "require": {
+        "php": "~7.3.0",
+        "ext-json": "*",
+        "ext-pgsql": "*",
+        "kelvineducation/the-framework-php": "^2.1.0",
+        "honeybadger-io/honeybadger-php": "^1.5.1"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/kelvineducation/the-framework-php"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}
