@@ -1,5 +1,8 @@
-# Deliverer
-Manage and serve versioned static assets
+# Sam
+
+_The Static Asset Management tool_
+
+Sam allows you to manage and serve versioned static assets.
 
 ## API Reference
 
