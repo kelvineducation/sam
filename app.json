@@ -23,8 +23,8 @@
             "required": true
         },
         "COMPOSER_AUTH": {
-            "description": "Composor auth JSON for installing packages from private GitHub repos",
-            "value": "",
+            "description": "Composer auth JSON for installing packages from private GitHub repos",
+            "value": "{\"github-oauth\":{\"github.com\":\"\"}}",
             "required": true
         },
         "HONEYBADGER_API_KEY": {
