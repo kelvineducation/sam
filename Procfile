@@ -1,1 +1,1 @@
-web: bin/start-pgbouncer vendor/bin/heroku-php-nginx public
+web: bin/start-pgbouncer vendor/bin/heroku-php-nginx -C heroku/nginx.conf public
