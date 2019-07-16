@@ -22,6 +22,11 @@ class AssetsPage extends FwPage
             throw new NotFoundException();
         }
 
+        // smax-age is respected by reverse proxies (Cloudflare) rather than the browser
+        //      60*60*24*365=31536000
+        // max-age is respected by browsers
+        //      14400=60*60*4=4 hours
+        $response->withHeader('Cache-Control', 'smax-age=31536000');
         $response->withHeader('Content-Type', $asset->getData('content_type'));
         $response->write($asset->getBlob()->getContent());
     }
