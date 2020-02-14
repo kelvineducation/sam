@@ -2,6 +2,7 @@
 
 return [
     'bmp'   => 'image/x-ms-bmp',
+    'crx'   => 'application/x-chrome-extension',
     'css'   => 'text/css',
     'gif'   => 'image/gif',
     'htm'   => 'text/html',
