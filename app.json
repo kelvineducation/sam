@@ -2,7 +2,7 @@
   "name": "Kelvin Deliverer",
   "logo": "https://kelvin.education/assets/images/logo-k-purple.svg",
   "repository": "https://github.com/kelvineducation/pulse",
-  "stack": "heroku-18",
+  "stack": "heroku-22",
   "formation": {
     "web": {
       "quantity": 1,
