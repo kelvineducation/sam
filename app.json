@@ -1,56 +1,54 @@
 {
-    "name": "Kelvin Deliverer",
-    "logo": "https://kelvin.education/assets/images/logo-k-purple.svg",
-    "repository": "https://github.com/kelvineducation/pulse",
-    "stack": "heroku-18",
-    "formation": {
-        "web": {
-            "quantity": 1,
-            "size": "hobby"
-        }
-    },
-    "addons": [
-        "heroku-postgresql:hobby-dev"
-    ],
-    "buildpacks": [
-        {"url": "https://github.com/heroku/heroku-buildpack-pgbouncer"},
-        {"url": "https://github.com/heroku/heroku-buildpack-php"}
-    ],
-    "env": {
-        "APP_ENV": {
-            "description": "The application environment",
-            "value": "staging",
-            "required": true
-        },
-        "COMPOSER_AUTH": {
-            "description": "Composer auth JSON for installing packages from private GitHub repos",
-            "value": "",
-            "required": true
-        },
-        "HONEYBADGER_API_KEY": {
-            "description": "API key required for sending errors to Honeybadger",
-            "value": "",
-            "required": false
-        },
-        "PGBOUNCER_DEFAULT_POOL_SIZE": {
-            "description": "The maximum number of connections to maintain to each database",
-            "value": "32",
-            "required": false
-        },
-        "PGBOUNCER_MIN_POOL_SIZE": {
-            "description": "The minimum number of connection to maintain",
-            "value": "10",
-            "required": false
-        },
-        "PGBOUNCER_LOG_CONNECTIONS": {
-            "description": "Whether to log connections to PgBouncer",
-            "value": "0",
-            "required": false
-        },
-        "PGBOUNCER_LOG_DISCONNECTIONS": {
-            "description": "Whether to log disconnections from PgBouncer",
-            "value": "0",
-            "required": false
-        }
+  "name": "Kelvin Deliverer",
+  "logo": "https://kelvin.education/assets/images/logo-k-purple.svg",
+  "repository": "https://github.com/kelvineducation/pulse",
+  "stack": "heroku-18",
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "hobby"
     }
+  },
+  "addons": ["heroku-postgresql:in-dyno"],
+  "buildpacks": [
+    { "url": "https://github.com/heroku/heroku-buildpack-pgbouncer" },
+    { "url": "https://github.com/heroku/heroku-buildpack-php" }
+  ],
+  "env": {
+    "APP_ENV": {
+      "description": "The application environment",
+      "value": "staging",
+      "required": true
+    },
+    "COMPOSER_AUTH": {
+      "description": "Composer auth JSON for installing packages from private GitHub repos",
+      "value": "",
+      "required": true
+    },
+    "HONEYBADGER_API_KEY": {
+      "description": "API key required for sending errors to Honeybadger",
+      "value": "",
+      "required": false
+    },
+    "PGBOUNCER_DEFAULT_POOL_SIZE": {
+      "description": "The maximum number of connections to maintain to each database",
+      "value": "32",
+      "required": false
+    },
+    "PGBOUNCER_MIN_POOL_SIZE": {
+      "description": "The minimum number of connection to maintain",
+      "value": "10",
+      "required": false
+    },
+    "PGBOUNCER_LOG_CONNECTIONS": {
+      "description": "Whether to log connections to PgBouncer",
+      "value": "0",
+      "required": false
+    },
+    "PGBOUNCER_LOG_DISCONNECTIONS": {
+      "description": "Whether to log disconnections from PgBouncer",
+      "value": "0",
+      "required": false
+    }
+  }
 }
