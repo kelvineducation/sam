@@ -14,9 +14,9 @@ class AssetsPage extends FwPage
         parent::__invoke($response, $request, $action, array_merge([$response], $vars));
     }
 
-    public function invoke(Response $response, $package, $version, $path_path)
+    public function invoke(Response $response, $package, $version, $path)
     {
-        $asset = Asset::findByRequestPath($package, $version, $path_path);
+        $asset = Asset::findByRequestPath($package, $version, $path);
 
         if (!$asset) {
             throw new NotFoundException();
