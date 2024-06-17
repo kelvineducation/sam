@@ -1,7 +1,7 @@
 {
   "name": "Kelvin Deliverer",
   "logo": "https://kelvin.education/assets/images/logo-k-purple.svg",
-  "repository": "https://github.com/kelvineducation/pulse",
+  "repository": "https://github.com/kelvineducation/sam",
   "stack": "heroku-22",
   "formation": {
     "web": {
@@ -11,8 +11,8 @@
   },
   "addons": ["heroku-postgresql:in-dyno"],
   "buildpacks": [
-    { "url": "https://github.com/heroku/heroku-buildpack-pgbouncer" },
-    { "url": "https://github.com/heroku/heroku-buildpack-php" }
+    { "url": "heroku/pgbouncer" },
+    { "url": "heroku/php" }
   ],
   "env": {
     "APP_ENV": {
